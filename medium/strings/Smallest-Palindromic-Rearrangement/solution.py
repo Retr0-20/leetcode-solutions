@@ -10,16 +10,21 @@ class Solution(object):
         length = len(s)
         sorted_s = sorted(s)
         first_half = []
+        fullString = ''
+
         for char in sorted(count.keys()):
             first_half.extend([char] * (count[char] // 2))
 
-        fullString = ''
         left = ''.join(first_half)
         right = ''.join(reversed(first_half))
-        middle = sorted_s[length//2]
+        middle = ''
+        
+        for char in count:
+            if count[char] % 2 == 1:
+                middle = char
+                break
 
         if length % 2 == 1:
-            middle = sorted_s[length // 2]
             fullString = left + middle + right
         else:
             fullString = left + right
