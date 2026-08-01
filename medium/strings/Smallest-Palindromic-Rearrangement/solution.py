@@ -8,7 +8,6 @@ class Solution(object):
         """
         count = Counter(s)
         length = len(s)
-        sorted_s = sorted(s)
         first_half = []
         fullString = ''
 
